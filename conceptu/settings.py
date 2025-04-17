@@ -90,13 +90,18 @@ import os
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'postgres://sandeshssanshi:Sanshi@9112003@postgresql:5432/crud-db')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'productdb',
+        'USER': 'sandeshssanshi',
+        'PASSWORD': 'Sanshi@9112003',
+        'HOST': 'postgres-service-name',
+        'PORT': '5432',
+    }
 }
 
-# Ensure that the engine is set to 'django.db.backends.postgresql'
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+
+
 
 
 

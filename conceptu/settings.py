@@ -84,14 +84,17 @@ WSGI_APPLICATION = 'conceptu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+
+
+import os
 import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=600
+        default=os.environ.get('DATABASE_URL', 'postgres://sandeshssanshi:Sanshi@9112003@postgresql:5432/crud-db')
     )
 }
+
 
 
 

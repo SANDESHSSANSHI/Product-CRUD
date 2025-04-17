@@ -25,7 +25,15 @@ SECRET_KEY = 'i7v=ry2mk(gkab47rq+=n@4zjdkxldb*l7a4lr920e+t1yl@f2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    # 'https://openshift-project-git-sandeshssanshi2003-dev.apps.rm1.0a51.p1.openshiftapps.com',
+    'https://django-crud-git-sandeshssanshi2003-dev.apps.rm1.0a51.p1.openshiftapps.com',
+]
+
+CSRF_COOKIE_SECURE = False  
+
 
 
 # Application definition

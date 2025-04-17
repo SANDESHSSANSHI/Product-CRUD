@@ -87,19 +87,17 @@ WSGI_APPLICATION = 'conceptu.wsgi.application'
 
 
 import os
-import dj_database_url
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'productdb',
-        'USER': 'sandeshssanshi',
-        'PASSWORD': 'Sanshi@9112003',
-        'HOST': 'postgres-service-name',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',  # or 'postgresql', 'sqlite3', etc.
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
-
 
 
 
